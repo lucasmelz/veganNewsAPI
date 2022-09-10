@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News aggregator API about Veganism</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3vh;
+        }
+
+        h2 {
+            font-size: 2.8vh;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        ul {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>News aggregator API about Veganism</h1>
+    <p>This is a server-side application built with NodeJS (Express) and MongoDB which provides news
+        from 8 different sources about veganism. When the server is initialized, a web scraping algorithm
+        collect all the news from those sources. Another script is executed every 30 minutes
+        to update the database with the most recent news. Cheerio and Axios are used for web scraping.
+        Mongoose middleware is utilized to interact with the MongoDB database.</p>
+
+    <h2>Explanation of Pagination Mechanism</h2>
+    <ul>
+        <li><a href="/allArticles"> All articles: <u>/allArticles</u> => returns first 10 articles (you can use optional
+                pagination queries, see examples below). </a></li>
+        <li><a href="/allArticles?page=0&limit=20"> All articles: <u>/allArticles?page=0&limit=20</u> => returns first
+                page considering pages with 20 articles each. </a></li>
+        <li><a href="/allArticles?page=0"> All articles: <u>/allArticles?page=0</u> => since limit is not specified, by
+                default each page has 10 articles. </a></li>
+        <li><a href="/allArticles?limit=15"> All articles: <u>/allArticles?limit=15</u> => since page is not specified,
+                by default it will return the first page, considering pages of 15 articles each.</a></li>
+    </ul>
+    <p style="text-align:center;"><b>The same pagination logic applies to the routes below...</b></p>
+
+    <h2>Categories Routes</h2>
+    <ul>
+        <li><a href="/categories/books"> Books: <u>/categories/books</u></a></li>
+        <li><a href="/categories/business"> Business: <u>/categories/business</u></a></li>
+        <li><a href="/categories/economy"> Economy: <u>/categories/economy</u></a></li>
+        <li><a href="/categories/environment"> Environment: <u>/categories/environment</u></a></li>
+        <li><a href="/categories/ethics"> Ethics: <u>/categories/ethics</u></a></li>
+        <li><a href="/categories/film"> Film: <u>/categories/film</u></a></li>
+        <li><a href="/categories/health"> Health: <u>/categories/health</u></a></li>
+        <li><a href="/categories/politics"> Politics: <u>/categories/politics</u></a></li>
+        <li><a href="/categories/recipes"> Recipes: <u>/categories/recipes</u></a></li>
+        <li><a href="/categories/science"> Science: <u>/categories/science</u></a></li>
+        <li><a href="/categories/sport"> Sport: <u>/categories/sport</u></a></li>
+        <li><a href="/categories/technology"> Technology: <u>/categories/technology</u></a></li>
+    </ul>
+
+    <h2>Newspapers Routes</h2>
+    <ul>
+        <li><a href="/newspapers/aljazeera"> Al Jazeera: <u>/newspapers/aljazeera</u></a></li>
+        <li><a href="/newspapers/bbc"> BBC: <u>/newspapers/bbc</u></a></li>
+        <li><a href="/newspapers/independentuk"> The Independent: <u>/newspapers/independentuk</u></a></li>
+        <li><a href="/newspapers/plantbasednews"> Plant Based News: <u>/newspapers/plantbasednews</u></a></li>
+        <li><a href="/newspapers/surgeactivism"> Surge Activism: <u>/newspapers/surgeactivism</u></a></li>
+        <li><a href="/newspapers/theguardian"> The Guardian: <u>/newspapers/theguardian</u></a></li>
+        <li><a href="/newspapers/thetimes"> New York Times: <u>/newspapers/thetimes</u></a></li>
+        <li><a href="/newspapers/veganuary"> Veganuary: <u>/newspapers/veganuary</u></a></li>
+    </ul>
+
+    <h2>Search Route</h2>
+    <ul>
+        <li><a href="/search/pasta"> Search all articles about 'pasta': <u>/search/pasta</u></a></li>
+    </ul>
+
+    <h2>Post Route</h2>
+    <ul>
+        <li> Route to post articles manually (requires secret key): <u>/post?secretKey='xxxxx'</u></li>
+    </ul>
+
+
+
+</body>
+
+</html>
