@@ -2,6 +2,8 @@
 Vegan News API built with NodeJS (Express) and MongoDB.
 
 
+**Two important files are missing here, which contain my web scraping algorithms... One is to initialize the database with all articles (even really old ones) from the different newspapers which I'm using as sources, and the other is just to update the database with the most recent news, consuming the content from the homepage of all newspapers... If you want to learn about web scraping with NodeJS (Cheerio) I suggest Ania Kubów tutorials on Youtube. 
+
 This is a server-side application built with NodeJS (Express) and MongoDB which provides news from 8 different sources about veganism. When the server is initialized, a web scraping algorithm collect all the news from those sources. Another script is executed every 30 minutes to update the database with the most recent news. Cheerio and Axios are used for web scraping. Mongoose middleware is utilized to interact with the MongoDB database.
 Explanation of Pagination Mechanism
 
